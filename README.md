@@ -2,6 +2,8 @@
 
 This repository is the official implementation of [E(*n*)-equivariant Graph Cellular Automata](https://arxiv.org/abs/2301.10497).
 
+**N.B.** Sometimes GIFs are not properly loaded in `README.md`. Please refresh the page.  
+
 ## Pattern Formation - Convergence to Geometric Graphs
 
 E(*n*) Convergence to 3D-Torus           |  E(*n*) Regeneration of 3D-Cube
