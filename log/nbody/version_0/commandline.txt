@@ -1,0 +1,1 @@
+train_dsystem.py -ds nbody -ne 500 -nd 16 -md 32 -act tanh -sls 0 25 -dt

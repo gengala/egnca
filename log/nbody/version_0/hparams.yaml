@@ -1,0 +1,28 @@
+args: !!python/object:argparse.Namespace
+  act: tanh
+  b1: 0.9
+  b2: 0.999
+  batch_size: 16
+  box_dim: null
+  dataset: nbody
+  device: cuda
+  factor_sch: 0.5
+  grad_clip_val: null
+  has_attention: true
+  has_coord_act: false
+  has_vel_norm: true
+  is_residual: false
+  lr: 0.0005
+  message_dim: 32
+  n_epochs: 500
+  n_layers: 1
+  node_dim: 16
+  patience: 100
+  patience_sch: 500
+  radius: null
+  seq_len_sch:
+  - 0
+  - 25
+  sparse_training: false
+  tsp: 0.9
+  wd: 1.0e-05

@@ -1,0 +1,1 @@
+train_gae.py -ds community -ne 3000 -cd 3 -nd 16 -md 32 -act tanh -s1 15 -s2 25 -ps 5 -rs 0 5 1000 1000

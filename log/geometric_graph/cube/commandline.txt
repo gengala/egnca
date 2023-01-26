@@ -1,0 +1,1 @@
+train_geometric_graph.py -ds Cube -nd 16 -md 32 -s1 15 -s2 25 -sdg 0.05 -rdg 1.0 -bsc 0 16

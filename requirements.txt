@@ -1,0 +1,15 @@
+networkx
+matplotlib
+sklearn
+scikit-learn
+scipy
+seaborn
+tqdm
+dill
+nolds
+PyGSP
+torch
+torch-scatter
+torch-sparse
+torch-geometric
+pytorch_lightning

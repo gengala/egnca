@@ -1,0 +1,32 @@
+args: !!python/object:argparse.Namespace
+  act: tanh
+  b1: 0.9
+  b2: 0.999
+  batch_sch:
+  - 0
+  - 16
+  dataset: Cube
+  dens_rand_edge: 1.0
+  device: cuda
+  factor_sch: 0.5
+  fire_rate: 1.0
+  grad_clip_val: 1.0
+  has_attention: false
+  has_coord_act: true
+  is_residual: true
+  lr: 0.001
+  message_dim: 32
+  n_layers: 1
+  n_max_steps: 25
+  n_min_steps: 15
+  node_dim: 16
+  norm_type: pn
+  patience: 5000
+  patience_sch: 500
+  pool_size: 256
+  radius_damage: 1.0
+  scale: 1.0
+  std: 0.5
+  std_damage: 0.05
+  training_steps: 100000
+  wd: 1.0e-05

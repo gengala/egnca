@@ -1,0 +1,30 @@
+{
+  "device": "cuda",
+  "dataset": "nbody",
+  "n_epochs": 500,
+  "patience": 100,
+  "batch_size": 16,
+  "seq_len_sch": [
+    0,
+    25
+  ],
+  "tsp": 0.9,
+  "lr": 0.0005,
+  "b1": 0.9,
+  "b2": 0.999,
+  "wd": 1e-05,
+  "grad_clip_val": null,
+  "patience_sch": 500,
+  "factor_sch": 0.5,
+  "node_dim": 16,
+  "message_dim": 32,
+  "n_layers": 1,
+  "act": "tanh",
+  "radius": null,
+  "is_residual": false,
+  "has_vel_norm": true,
+  "has_coord_act": false,
+  "has_attention": true,
+  "sparse_training": false,
+  "box_dim": null
+}
