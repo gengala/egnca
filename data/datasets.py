@@ -284,7 +284,7 @@ class GeometricGraphDataset(Dataset):
         self.full_edge_weight = torch.norm(self.coord[row] - self.coord[col], dim=-1)
         self.cut_rand_edge = int(self.density_rand_edge * self.full_edge_index.size(1))
 
-    def __getitem__(
+    def get(
         self,
         index: int
     ):
@@ -302,7 +302,7 @@ class GeometricGraphDataset(Dataset):
         )
         return data
 
-    def __len__(self):
+    def len(self):
         return self.length
 
 
