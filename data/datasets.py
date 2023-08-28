@@ -245,14 +245,16 @@ def create_cube_cloud(
 
 
 def create_pyramid():
-    values = torch.linspace(0, 1, steps=16)
-    x, y, z = torch.meshgrid(values, values, values, indexing='xy')
+    values = np.linspace(0, 1, num=16)
+    x, y, z = np.meshgrid(values, values, values, indexing='xy')
     mask = (x <= 1 - z) & (x >= z) & (y <= 1 - z) & (y >= z)
-    coord = torch.stack((x[mask].reshape(-1), y[mask].reshape(-1), z[mask].reshape(-1)), dim=1)
-    coord = (coord - coord.mean(0)) / coord.std(0)
-    dist = ((coord.unsqueeze(1) - coord.unsqueeze(0)) ** 2).sum(dim=-1).fill_diagonal_(torch.inf)
-    edge_index = torch.argwhere(
-        torch.logical_or(dist <= 0.072,  torch.logical_and(0.4483 < dist, dist < 0.4485))).T
+    coord = np.vstack((x[mask], y[mask], z[mask])).T
+    coord = (coord - np.mean(coord, axis=0)) / np.std(coord, axis=0)
+    dist = np.sum((coord[:, None] - coord[None, :]) ** 2, axis=-1)
+    np.fill_diagonal(dist, np.inf)
+    edge_index = np.column_stack(np.where(
+        np.logical_or(dist <= 0.072, np.logical_and(0.4475 < dist, dist < 0.4490))))
+    coord, edge_index = torch.Tensor(coord), torch.Tensor(edge_index).t().long()
     return coord, edge_index
 
 
