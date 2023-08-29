@@ -28,7 +28,7 @@ parser.add_argument('-rdg', '--radius_damage',  type=float, default=None,   help
 parser.add_argument('-nd',  '--node_dim',       type=int,   default=16,     help='node feature dimension')
 parser.add_argument('-md',  '--message_dim',    type=int,   default=32,     help='hidden feature dimension')
 parser.add_argument('-nl',  '--n_layers',       type=int,   default=1,      help='number of EGNN layers')
-parser.add_argument('-nt',  '--norm_type',      type=str,   default='pn',   help='norm type: nn, pn or None')
+parser.add_argument('-nt',  '--norm_type',      type=str,   default='pn',   help='norm type: nn, pn or none')
 parser.add_argument('-act',                     type=str,   default='tanh', help='tanh | silu | lrelu')
 parser.add_argument('-std',                     type=float, default=0.5,    help='standard deviation of init coord')
 parser.add_argument('-s1',  '--n_min_steps',    type=int,   default=15,     help='minimum number of steps')
@@ -56,6 +56,7 @@ parser.add_argument('-facs', '--factor_sch',    type=float, default=0.5,    help
 args = parser.parse_args()
 if args.patience is None: args.patience = args.training_steps
 if args.patience_sch is None: args.patience_sch = args.training_steps
+if args.norm_type == 'none': args.norm_type = None
 print(args)
 
 target_coord, edge_index = get_geometric_graph(args.dataset)
