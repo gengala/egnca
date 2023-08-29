@@ -258,11 +258,21 @@ def create_pyramid():
     return coord, edge_index
 
 
+def create_line(n_points=64):
+    coord = torch.linspace(0, 1, steps=n_points).unsqueeze(1).repeat(1, 2)
+    coord = (coord - coord.mean(0)) / coord.std(0)
+    dist = ((coord.unsqueeze(1) - coord.unsqueeze(0)) ** 2).sum(dim=-1).fill_diagonal_(torch.inf)
+    edge_index = torch.argwhere(dist <= dist.min() + 0.001).T
+    return coord, edge_index
+
+
 def get_geometric_graph(
     name: str,
     **kwargs
 ):
-    if name == 'Cube':
+    if name == 'Line':
+        coord, edge_index = create_line()
+    elif name == 'Cube':
         coord, edge_index = create_cube_cloud()
     elif name == 'Pyramid':
         coord, edge_index = create_pyramid()
