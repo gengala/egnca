@@ -2,7 +2,7 @@ networkx
 matplotlib
 sklearn
 scikit-learn
-scipy
+scipy==1.8.1
 seaborn
 tqdm
 dill
@@ -12,4 +12,5 @@ torch
 torch-scatter
 torch-sparse
 torch-geometric
-pytorch_lightning
+pytorch_lightning==1.7.3
+torchmetrics==0.11.4
