@@ -276,8 +276,10 @@ def get_geometric_graph(
         coord, edge_index = create_cube_cloud()
     elif name == 'Pyramid':
         coord, edge_index = create_pyramid()
-    else:
+    elif name in ['Bunny', 'Grid2d', 'Torus']:
         coord, edge_index = load_pygsp_graph(name, **kwargs)
+    else:
+        coord, edge_index = torch.load('./clouds/%s.pt' % name)
     return coord, edge_index
 
 
