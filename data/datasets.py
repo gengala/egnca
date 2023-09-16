@@ -279,7 +279,7 @@ def get_geometric_graph(
     elif name in ['Bunny', 'Grid2d', 'Torus']:
         coord, edge_index = load_pygsp_graph(name, **kwargs)
     else:
-        coord, edge_index = torch.load('./clouds/%s.pt' % name)
+        coord, edge_index = torch.load('./data/clouds/%s.pt' % name)
     return coord, edge_index
 
 
